@@ -12,25 +12,40 @@ import { Button } from 'flowbite-react'
 import FormModal from './Modal'
 import { HiOutlineArrowRight } from 'react-icons/hi'
 import Designs from './Designs'
+const bgArr = [bg01, bg02, bg03, bg04, bg05, bg06, bg08, bg09]
+const customMessage =
+	'Eid Mubarak! 🌙✨ May this blessed occasion bring you joy, peace, and prosperity. May your heart be filled with love, your home with happiness, and your life with endless blessings. Wishing you and your loved ones a wonderful Eid filled with laughter, togetherness, and gratitude. Stay blessed! 🤲💖'
+
+const cardClasses = [
+	'right-20 flex-col items-end bottom-72 [&>p]:text-2xl [&>p]:text-right [&>p]:w-1/2 [&>p]:text-wrap',
+	'top-80 justify-center [&>p]:text-lg [&>p]:text-center [&>p]:w-1/2 [&>p]:text-wrap',
+	'bottom-44 justify-center [&>p]:text-center [&>p]:w-1/2 [&>p]:text-wrap [&>p]:ml-20',
+	'top-2/5 left-20 [&>p]:px-4 [&>p]:pl-8 text-justify [&>p]:w-1/3',
+	'bottom-28 text-justify [&>p]:mx-auto [&>p]:w-3/5',
+	'bottom-60 text-center text-white [&>p]:mx-auto [&>p]:w-3/5',
+	'bottom-60 text-center [&>p]:mx-auto [&>p]:w-3/5',
+	'bottom-20 text-center [&>p]:mx-auto [&>p]:w-3/5',
+]
+
+const infoArr = [
+	'bottom-6 right-24 text-right',
+	'bottom-70 right-80 text-right',
+	'bottom-20 right-80 text-right',
+	'bottom-32 left-[350px] text-right',
+	'bottom-2 right-70 text-right',
+	'hidden',
+	'bottom-36 w-full text-center',
+	'bottom-14 right-14 text-center',
+]
 const Certificate = () => {
-	const customMessage =
-		'Eid Mubarak! 🌙✨ May this blessed occasion bring you joy, peace, and prosperity. May your heart be filled with love, your home with happiness, and your life with endless blessings. Wishing you and your loved ones a wonderful Eid filled with laughter, togetherness, and gratitude. Stay blessed! 🤲💖'
 	const [name, setName] = useState('')
 	const [designation, setDesignation] = useState('')
 	const [company, setCompany] = useState('')
 	const [message, setMessage] = useState('')
 	const [openModal, setOpenModal] = useState(false)
-
-	const handleModal = () => {
-		setName('')
-		setDesignation('')
-		setCompany('')
-		setMessage('')
-		setOpenModal(true)
-	}
+	const [background, setBackground] = useState({ image: bg01, index: 0 })
 
 	const elementRef = useRef(null)
-
 	const htmlToImageConvert = () => {
 		toPng(elementRef.current, { cacheBust: false })
 			.then((dataUrl) => {
@@ -42,6 +57,17 @@ const Certificate = () => {
 			.catch((err) => {
 				console.log(err)
 			})
+	}
+	const handleModal = () => {
+		setName('')
+		setDesignation('')
+		setCompany('')
+		setMessage('')
+		setOpenModal(true)
+	}
+
+	const handleBg = (bg, index) => {
+		setBackground({ image: bg, index })
 	}
 
 	const formInfo = {
@@ -56,25 +82,6 @@ const Certificate = () => {
 		openModal,
 		setOpenModal,
 	}
-	const bgArr = [bg01, bg02, bg03, bg04, bg05, bg06, bg08, bg09]
-	const [changeBg, setChangeBg] = useState(bg01)
-	const [activeBg, setActiveBg] = useState(0)
-
-	const handleBg = (bg, index) => {
-		setChangeBg(bg)
-		setActiveBg(index)
-	}
-
-	const cardClasses = [
-		'right-20 flex-col items-end bottom-72 [&>p]:text-2xl [&>p]:text-right [&>p]:w-1/2 [&>p]:text-wrap',
-		'top-80 justify-center [&>p]:text-lg [&>p]:text-center [&>p]:w-1/2 [&>p]:text-wrap',
-		'bottom-44 justify-center [&>p]:text-center [&>p]:w-1/2 [&>p]:text-wrap [&>p]:ml-20',
-		'top-2/5 left-20 [&>p]:px-4 [&>p]:pl-8 text-justify [&>p]:w-1/3',
-		'bottom-28 text-justify [&>p]:mx-auto [&>p]:w-3/5',
-		'bottom-60 text-center text-white [&>p]:mx-auto [&>p]:w-3/5',
-		'bottom-60 text-center [&>p]:mx-auto [&>p]:w-3/5',
-		'bottom-20 text-center [&>p]:mx-auto [&>p]:w-3/5',
-	]
 
 	return (
 		<section className='w-11/12 mx-auto grid grid-cols-10 gap-5'>
@@ -100,24 +107,26 @@ const Certificate = () => {
 					ref={elementRef}
 					className='relative h-[90vh] bg-center bg-no-repeat bg-cover rounded-md'
 					style={{
-						backgroundImage: `url(${changeBg})`,
+						backgroundImage: `url(${background.image})`,
 					}}
 				>
 					<div
-						className={`absolute flex w-full [&>p]:text-xl [&>p]:italic [&>p]:font-medium [&>p]:leading-10 ${cardClasses[activeBg]}`}
+						className={`absolute flex w-full [&>p]:text-xl [&>p]:italic [&>p]:font-medium [&>p]:leading-10 ${
+							cardClasses[background.index]
+						}`}
 					>
 						<p>{message ? message : customMessage}</p>
 					</div>
 					<div
-						className={`absolute bottom-6 right-24 text-lg text-right ${
-							activeBg === 1 && 'hidden'
-						}`}
+						className={`absolute text-lg [&>.personName]:italic [&>.personDesignation]:font-semibold ${
+							infoArr[background.index]
+						} `}
 					>
-						<h3 className='italic'>{name ? name : 'Your Name'}</h3>
-						<p className='font-semibold'>
+						<h3 className='personName'>{name ? name : 'Your Name'}</h3>
+						<p className='personDesignation'>
 							{designation ? designation : 'Your Designation'}
 						</p>
-						<p>{company ? company : 'Your Company Name'}</p>
+						<h4>{company ? company : 'Your Company Name'}</h4>
 					</div>
 				</div>
 				<FormModal formInfo={formInfo} />

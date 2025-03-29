@@ -35,3 +35,14 @@ bottom-64 text-justify text-white [&>p]:mx-auto [&>p]:w-3/5
 bottom-60 text-center [&>p]:mx-auto [&>p]:w-3/5
 
 bottom-20 text-center [&>p]:mx-auto [&>p]:w-3/5
+====================================
+const infoArr = [
+    "absolute bottom-6 right-24 text-lg text-right [&>.personName]:italic [&>.personDesignation]:font-semibold",
+    "absolute bottom-70 right-80 text-lg text-right [&>.personName]:italic [&>.personDesignation]:font-semibold",
+    "absolute bottom-20 right-80 text-lg text-right [&>.personName]:italic [&>.personDesignation]:font-semibold",
+    "absolute bottom-32 left-[350px] text-lg text-right [&>.personName]:italic [&>.personDesignation]:font-semibold",
+    "absolute bottom-2 right-70 text-lg text-right [&>.personName]:italic [&>.personDesignation]:font-semibold",
+    "hidden",
+    "absolute bottom-36 w-full text-center text-lg [&>.personName]:italic [&>.personDesignation]:font-semibold",
+    "absolute bottom-14 right-14 text-center text-lg [&>.personName]:italic [&>.personDesignation]:font-semibold",
+]
