@@ -1,0 +1,37 @@
+1 = absolute right-20 flex flex-col items-end bottom-72 w-full [&>p]:text-2xl [&>p]:text-right [&>p]:italic [&>p]:w-1/2 [&>p]:leading-10 [&>p]:text-wrap
+
+
+2 = absolute top-80 flex  justify-center w-full [&>p]:text-lg [&>p]:text-center [&>p]:italic [&>p]:font-medium [&>p]:w-1/2 [&>p]:leading-10 [&>p]:text-wrap
+
+3 = absolute bottom-44 flex justify-center w-full [&>p]:text-xl [&>p]:text-center [&>p]:italic [&>p]:font-medium [&>p]:w-1/2 [&>p]:leading-10 [&>p]:ml-20
+
+4 = absolute top-2/5 left-16 flex w-full [&>p]:px-4 [&>p]:text-xl [&>p]:italic [&>p]:font-medium text-justify [&>p]:w-1/3 [&>p]:leading-10
+
+5 = absolute bottom-28 flex w-full [&>p]:text-xl [&>p]:italic [&>p]:font-medium text-justify [&>p]:mx-auto [&>p]:w-3/5 [&>p]:leading-10
+
+6 = absolute bottom-64 flex w-full [&>p]:text-xl [&>p]:italic [&>p]:font-medium text-justify text-white [&>p]:mx-auto [&>p]:w-3/5 [&>p]:leading-10
+
+
+7 = absolute bottom-60 flex w-full [&>p]:text-xl [&>p]:italic [&>p]:font-medium text-center [&>p]:mx-auto [&>p]:w-3/5 [&>p]:leading-10
+
+8 = absolute bottom-20 flex w-full [&>p]:text-xl [&>p]:italic [&>p]:font-medium text-center [&>p]:mx-auto [&>p]:w-3/5 [&>p]:leading-10
+
+
+absolute flex w-full [&>p]:text-xl [&>p]:italic [&>p]:font-medium [&>p]:leading-10
+
+
+right-20 flex-col items-end bottom-72 [&>p]:text-2xl [&>p]:text-right [&>p]:w-1/2 [&>p]:text-wrap
+
+top-80 justify-center [&>p]:text-lg [&>p]:text-center [&>p]:w-1/2 [&>p]:text-wrap
+
+bottom-44 justify-center [&>p]:text-center [&>p]:w-1/2 [&>p]:text-wrap [&>p]:ml-20
+
+top-2/5 left-16 [&>p]:px-4 text-justify [&>p]:w-1/3
+
+bottom-28 text-justify [&>p]:mx-auto [&>p]:w-3/5
+
+bottom-64 text-justify text-white [&>p]:mx-auto [&>p]:w-3/5
+
+bottom-60 text-center [&>p]:mx-auto [&>p]:w-3/5
+
+bottom-20 text-center [&>p]:mx-auto [&>p]:w-3/5
