@@ -69,9 +69,9 @@ const Certificate = () => {
 		'right-20 flex-col items-end bottom-72 [&>p]:text-2xl [&>p]:text-right [&>p]:w-1/2 [&>p]:text-wrap',
 		'top-80 justify-center [&>p]:text-lg [&>p]:text-center [&>p]:w-1/2 [&>p]:text-wrap',
 		'bottom-44 justify-center [&>p]:text-center [&>p]:w-1/2 [&>p]:text-wrap [&>p]:ml-20',
-		'top-2/5 left-16 [&>p]:px-4 text-justify [&>p]:w-1/3',
+		'top-2/5 left-20 [&>p]:px-4 [&>p]:pl-8 text-justify [&>p]:w-1/3',
 		'bottom-28 text-justify [&>p]:mx-auto [&>p]:w-3/5',
-		'bottom-64 text-justify text-white [&>p]:mx-auto [&>p]:w-3/5',
+		'bottom-60 text-center text-white [&>p]:mx-auto [&>p]:w-3/5',
 		'bottom-60 text-center [&>p]:mx-auto [&>p]:w-3/5',
 		'bottom-20 text-center [&>p]:mx-auto [&>p]:w-3/5',
 	]
