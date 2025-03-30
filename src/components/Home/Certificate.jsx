@@ -8,14 +8,15 @@ import bg05 from '../../assets/bg-06.png'
 import bg06 from '../../assets/bg-07.png'
 import bg08 from '../../assets/bg-10.png'
 import bg09 from '../../assets/bg-11.png'
+import bg10 from '../../assets/bg-12.png'
+import bg11 from '../../assets/bg-13.png'
+import bg12 from '../../assets/bg-14.jpg'
 import { Button } from 'flowbite-react'
 import FormModal from './Modal'
 import { HiOutlineArrowRight } from 'react-icons/hi'
 import Designs from './Designs'
-import { Rnd } from 'react-rnd'
-import MessageBox from './MessageBox'
 import Canvas from './Canvas'
-const bgArr = [bg01, bg02, bg03, bg04, bg05, bg06, bg08, bg09]
+const bgArr = [bg01, bg02, bg03, bg04, bg05, bg06, bg08, bg09, bg10, bg11, bg12]
 const customMessage =
 	'Eid Mubarak! 🌙✨ May this blessed occasion bring you joy, peace, and prosperity. May your heart be filled with love, your home with happiness, and your life with endless blessings. Wishing you and your loved ones a wonderful Eid filled with laughter, togetherness, and gratitude. Stay blessed! 🤲💖'
 
@@ -28,6 +29,9 @@ const cardClasses = [
 	'bottom-60 text-center text-white [&>p]:mx-auto [&>p]:w-3/5',
 	'bottom-60 text-center [&>p]:mx-auto [&>p]:w-3/5',
 	'bottom-20 text-center [&>p]:mx-auto [&>p]:w-3/5',
+	'bottom-20 text-center text-white [&>p]:mx-auto [&>p]:w-3/5',
+	'bottom-20 text-center text-white [&>p]:mx-auto [&>p]:w-3/5',
+	'bottom-20 text-center text-white [&>p]:mx-auto [&>p]:w-3/5',
 ]
 
 const infoArr = [
@@ -38,6 +42,9 @@ const infoArr = [
 	'bottom-2 right-70 text-right',
 	'hidden',
 	'bottom-36 w-full text-center',
+	'bottom-14 right-14 text-center',
+	'bottom-14 right-14 text-center',
+	'bottom-14 right-14 text-center',
 	'bottom-14 right-14 text-center',
 ]
 const Certificate = () => {

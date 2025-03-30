@@ -1,3 +1,4 @@
+import Designation from './Designation'
 import MessageBox from './MessageBox'
 
 const Canvas = ({ canvasInfo }) => {
@@ -11,6 +12,7 @@ const Canvas = ({ canvasInfo }) => {
 		designation,
 		company,
 	} = canvasInfo
+	const designationInfo = { infoArr, background, name, designation, company }
 	return (
 		<div
 			ref={elementRef}
@@ -26,17 +28,7 @@ const Canvas = ({ canvasInfo }) => {
 			>
 				<MessageBox message={message} customMessage={customMessage} />
 			</div>
-			<div
-				className={`absolute text-lg [&>.personName]:italic [&>.personDesignation]:font-semibold ${
-					infoArr[background.index]
-				} `}
-			>
-				<h3 className='personName'>{name ? name : 'Your Name'}</h3>
-				<p className='personDesignation'>
-					{designation ? designation : 'Your Designation'}
-				</p>
-				<h4>{company ? company : 'Your Company Name'}</h4>
-			</div>
+			<Designation designationInfo={designationInfo} />
 		</div>
 	)
 }
