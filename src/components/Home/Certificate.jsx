@@ -12,6 +12,8 @@ import { Button } from 'flowbite-react'
 import FormModal from './Modal'
 import { HiOutlineArrowRight } from 'react-icons/hi'
 import Designs from './Designs'
+import { Rnd } from 'react-rnd'
+import MessageBox from './MessageBox'
 const bgArr = [bg01, bg02, bg03, bg04, bg05, bg06, bg08, bg09]
 const customMessage =
 	'Eid Mubarak! 🌙✨ May this blessed occasion bring you joy, peace, and prosperity. May your heart be filled with love, your home with happiness, and your life with endless blessings. Wishing you and your loved ones a wonderful Eid filled with laughter, togetherness, and gratitude. Stay blessed! 🤲💖'
@@ -115,7 +117,7 @@ const Certificate = () => {
 							cardClasses[background.index]
 						}`}
 					>
-						<p>{message ? message : customMessage}</p>
+						<MessageBox message={message} customMessage={customMessage} />
 					</div>
 					<div
 						className={`absolute text-lg [&>.personName]:italic [&>.personDesignation]:font-semibold ${
