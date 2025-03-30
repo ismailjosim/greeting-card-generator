@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { Rnd } from 'react-rnd'
+import { X } from 'lucide-react' // Import close icon from Lucide
 
 const Designation = ({ designationInfo }) => {
 	const { infoArr, background, name, designation, company } = designationInfo
 
-	// Initial position and size
+	// State for position, size, selection, and visibility
 	const [position, setPosition] = useState({ x: 1000, y: 745 })
 	const [size, setSize] = useState({ width: 250, height: 120 })
 	const [isSelected, setIsSelected] = useState(false)
 	const [isEditing, setIsEditing] = useState(false)
+	const [isVisible, setIsVisible] = useState(true) // Track visibility
 
 	// Editable text states
 	const [editableName, setEditableName] = useState(name || 'Your Name')
@@ -32,8 +34,16 @@ const Designation = ({ designationInfo }) => {
 		return () => document.removeEventListener('click', handleClickOutside)
 	}, [])
 
-	// Font size calculation (minimum 16px for readability)
+	// Hide component when remove button is clicked
+	const handleRemove = () => {
+		setIsVisible(false)
+	}
+
+	// Font size calculation (minimum 20px for readability)
 	const dynamicFontSize = Math.max(20, Math.min(size.width, size.height) * 0.1)
+
+	if (!isVisible) return null // Don't render if hidden
+
 	return (
 		<Rnd
 			className={`designation-box absolute text-lg flex flex-col rounded-2xl justify-center items-center text-center
@@ -56,6 +66,16 @@ const Designation = ({ designationInfo }) => {
 				cursor: isEditing ? 'text' : 'move',
 			}}
 		>
+			{/* Remove Button (Visible when selected) */}
+			{isSelected && (
+				<button
+					onClick={handleRemove}
+					className='absolute -top-5 -right-3 bg-red-500 text-white rounded-full p-1 shadow-md hover:bg-red-700 transition'
+				>
+					<X size={20} />
+				</button>
+			)}
+
 			{isEditing ? (
 				<div className='w-full'>
 					<input
