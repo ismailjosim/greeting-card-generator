@@ -14,6 +14,7 @@ import { HiOutlineArrowRight } from 'react-icons/hi'
 import Designs from './Designs'
 import { Rnd } from 'react-rnd'
 import MessageBox from './MessageBox'
+import Canvas from './Canvas'
 const bgArr = [bg01, bg02, bg03, bg04, bg05, bg06, bg08, bg09]
 const customMessage =
 	'Eid Mubarak! 🌙✨ May this blessed occasion bring you joy, peace, and prosperity. May your heart be filled with love, your home with happiness, and your life with endless blessings. Wishing you and your loved ones a wonderful Eid filled with laughter, togetherness, and gratitude. Stay blessed! 🤲💖'
@@ -84,6 +85,16 @@ const Certificate = () => {
 		openModal,
 		setOpenModal,
 	}
+	const canvasInfo = {
+		elementRef,
+		background,
+		cardClasses,
+		message,
+		customMessage,
+		infoArr,
+		designation,
+		company,
+	}
 
 	return (
 		<section className='w-11/12 mx-auto grid grid-cols-10 gap-5'>
@@ -105,32 +116,7 @@ const Certificate = () => {
 					</Button>
 				</div>
 
-				<div
-					ref={elementRef}
-					className='relative h-[90vh] bg-center bg-no-repeat bg-cover rounded-md'
-					style={{
-						backgroundImage: `url(${background.image})`,
-					}}
-				>
-					<div
-						className={`absolute flex w-full [&>p]:text-xl [&>p]:italic [&>p]:font-medium [&>p]:leading-10 ${
-							cardClasses[background.index]
-						}`}
-					>
-						<MessageBox message={message} customMessage={customMessage} />
-					</div>
-					<div
-						className={`absolute text-lg [&>.personName]:italic [&>.personDesignation]:font-semibold ${
-							infoArr[background.index]
-						} `}
-					>
-						<h3 className='personName'>{name ? name : 'Your Name'}</h3>
-						<p className='personDesignation'>
-							{designation ? designation : 'Your Designation'}
-						</p>
-						<h4>{company ? company : 'Your Company Name'}</h4>
-					</div>
-				</div>
+				<Canvas canvasInfo={canvasInfo} />
 				<FormModal formInfo={formInfo} />
 			</div>
 		</section>
